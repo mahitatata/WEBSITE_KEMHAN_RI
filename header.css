@@ -1,0 +1,459 @@
+.main-header {
+    background-color: #a30202;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    left: 0;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-left img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.banner-img {
+  height: 50px;
+}
+
+.text-left {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.text-left h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+.text-left .tagline {
+  margin: 0;
+  font-size: 13px;
+  color: #ffeaea;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.btn-login {
+    background-color: #ffffff;
+    color: #a30202;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+.hamburger:hover {
+    opacity: 0.8;
+}
+
+/* close button di hamburger */
+.close-btn {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: none; /* default hidden, muncul kalau nav aktif */
+}
+
+.nav-right.active .close-btn {
+  display: block;
+}
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* HERO CONTENT */
+.hero-content {
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-content img.full-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-content img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.full-banner {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tombol Daftar */
+.nav-right .btn-login:last-child {
+  background: #ffffff;
+  color: #a30202;
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+ .nav-right .btn-login {
+    background: white;
+    color: #a30202;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+.nav-right a {
+  color: white;
+  font-weight: 600;
+}
+
+.nav-right a:hover {
+  opacity: 0.85;
+}
+
+.nav-right.active {
+    z-index: 10000;
+}
+
+/* Dropdown untuk user login */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 100000;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  pointer-events: auto;
+  z-index: 100001 !important;
+}
+
+.dropdown.open .dropdown-content {
+  display: block !important;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 9999;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+
+.dropdown .btn-login {
+    pointer-events: auto;
+    position: relative;
+    z-index: 6000;
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  /* Link di dalam dropdown */
+  .dropdown-content a {
+    color: #333 !important;
+    padding: 12px 14px;
+    font-size: 16px;
+    width: 100%;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    border-radius: 6px !important;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .faq h3 {
+    font-size: 22px;
+  }
+
+  .search-form input[type="text"] {
+    font-size: 14px;
+  }
+
+  .search-form button {
+    padding: 12px 20px;
+  }
+
+  /* Hamburger muncul */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 26px;
+    color: white;
+    background: none;
+    border: none;
+  }
+
+  /* Navbar disembunyikan */
+  .nav-right {
+    position: fixed;
+    top: 0;
+    right: -250px; 
+    height: 100%;
+    width: 250px;
+    background: #a30202c7;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 20px;
+    transition: right 0.4s ease-in-out;
+    z-index: 999;
+  }
+
+  /* Navbar muncul */
+  .nav-right.active {
+    right: 0;
+    z-index: 10000;
+  }
+
+  /* Link menu */
+  .nav-right a {
+    margin: 15px 0;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .nav-right a:hover {
+    opacity: 0.85;
+  }
+
+  /* Tombol Masuk */
+  .nav-right .btn-login {
+    background: white;
+    color: #a30202;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Tombol Daftar */
+  .nav-right .btn-login:last-child {
+    background: #ffffff;
+    color: #a30202;
+  }
+
+  /* Footer */
+    .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    padding: 10px 15px 25px;
+  }
+
+  .footer-desc {
+    max-width: 100%;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-section h4::after {
+    left: 50%;
+    margin: 0 auto;
+    transform: translateX(-50%);
+  }
+
+  /* Pastikan dropdown bisa diklik */
+  .dropdown {
+    width: 100%;
+    position: relative;
+  }
+
+  .dropdown .btn-login {
+    width: 100%;
+    text-align: left;
+    background: white;
+    color: #a30202;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 17px;
+  }
+
+  /* Dropdown muncul saat tombol ditekan, bukan hover */
+  .dropdown-content {
+    position: relative !important;
+    display: none;
+    background: #fff;
+    margin-top: 8px;
+    width: 100%;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Saat parent diberi class .open, dropdown muncul */
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  /* Link di dalam dropdown */
+  .dropdown-content a {
+    color: #333 !important;
+    padding: 12px 14px;
+    font-size: 16px;
+    width: 100%;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background: #f0f0f0;
+    border-radius: 6px !important;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown .dropdown-content {
+    transition: opacity 0.12s ease;
+    opacity: 1;
+  }
+
+@keyframes fadeIn {
+  from {opacity:0; transform:scale(0.9);}
+  to {opacity:1; transform:scale(1);}
+}
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .dropdown .dropdown-content {
+    position: relative !important;
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    z-index: 999999;
+  }
+
+  .dropdown .btn-login { width: 100%; text-align: left; }
+}
