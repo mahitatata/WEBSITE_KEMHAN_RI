@@ -2,32 +2,32 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
- body {
+body {
   background-color: #fff;
 }
 
 /* Container untuk konten utama */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* No Article */
 .no-article {
   grid-column: 1 / -1;
   display: flex;
-  text-align: center;       
-  font-size: 1.2rem;       
-  color: #666;             
-  margin: 60px 0;                     
-  justify-content: center;  
-  align-items: center;      
-  min-height: 200px;  
-  font-weight: 500;     
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin: 60px 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-weight: 500;
 }
 
 /* ===== MODERN FAQ STYLE ===== */
@@ -36,7 +36,6 @@
   max-width: 900px;
   margin: 0 auto;
 }
-
 
 .faq-title {
   padding-top: 70px;
@@ -56,20 +55,20 @@
   margin: 18px auto;
   background: #fff;
   border-radius: 15px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-  transition: .25s ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease;
   border: 2px solid #b2b2b2ca;
 }
 
 .faq-item.active {
-  border: 2px solid #8B0000;
+  border: 2px solid #8b0000;
   border-radius: 14px;
   overflow: hidden;
 }
 
 .faq-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .faq-header {
@@ -83,8 +82,8 @@
 }
 
 .faq-item.active .faq-header {
-    background: #d0d0d0 !important;
-    border-radius: 10px 10px 0 0;
+  background: #d0d0d0 !important;
+  border-radius: 10px 10px 0 0;
 }
 
 .faq-actions {
@@ -108,7 +107,7 @@
 }
 
 .faq-question span {
-  flex: 1; 
+  flex: 1;
 }
 
 .faq-item .faq-question {
@@ -122,7 +121,7 @@
   align-items: center;
 }
 
-.faq-item.active .faq-question { 
+.faq-item.active .faq-question {
   padding: 16px 18px;
   width: 100%;
 }
@@ -130,7 +129,7 @@
 /* Dropdown Arrow */
 .faq-toggle {
   font-size: 20px;
-  transition: .3s;
+  transition: 0.3s;
   color: #000000;
   cursor: pointer;
   margin-left: 12px;
@@ -146,7 +145,7 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  padding: 0 16px;             
+  padding: 0 16px;
   transition: max-height 0.35s ease, opacity 0.25s ease;
 }
 
@@ -156,8 +155,8 @@
 }
 
 .faq-item .answer {
-    background: #ffffff;
-    border-radius: 0 0 5px 5px;
+  background: #ffffff;
+  border-radius: 0 0 5px 5px;
 }
 
 /* ===== ADMIN EDIT BUTTON ===== */
@@ -168,7 +167,7 @@
   border: 1px solid #ddd;
   background: #f4f4f4;
   cursor: pointer;
-  transition: .2s ease;
+  transition: 0.2s ease;
 }
 
 .faq-edit i {
@@ -187,12 +186,11 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 768px){
-
+@media (max-width: 768px) {
   .faq-wrapper {
     padding: 0 16px; /* tambahkan padding */
   }
-  
+
   .faq-item {
     padding: 0;
     margin: 16px 0px;
@@ -219,171 +217,174 @@
     border-radius: 0;
     width: 100%;
   }
-
 }
 
 /*edit faq*/
 /* --- Modal Background --- */
 .edit-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.45);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
 }
 
 /* --- Modal Box --- */
 .edit-box {
-    background: #ffffff;
-    width: 550px;                    /* <<< LEBAR BARU */
-    padding: 25px 30px;
-    border-radius: 14px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.18);
-    animation: fadeIn 0.2s ease-out;
-    border-top: 6px solid #a60000;   /* <<< WARNA MERAH KEMHAN */
+  background: #ffffff;
+  width: 550px; /* <<< LEBAR BARU */
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.18);
+  animation: fadeIn 0.2s ease-out;
+  border-top: 6px solid #a60000; /* <<< WARNA MERAH KEMHAN */
 }
 
 /* Judul */
 .edit-box h3 {
-    margin-bottom: 18px;
-    font-size: 22px;
-    color: #a60000;
-    font-weight: 700;
+  margin-bottom: 18px;
+  font-size: 22px;
+  color: #a60000;
+  font-weight: 700;
 }
 
 /* Label */
 .edit-box label {
-    font-weight: 600;
-    color: #333;
-    display: block;
-    margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
 }
 
 /* Input & Textarea */
 .edit-box input[type="text"],
 .edit-box textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1.6px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 18px;
-    font-size: 15px;
-    outline: none;
-    transition: 0.15s ease;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.6px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.15s ease;
 }
 
 /* Fokus */
 .edit-box input:focus,
 .edit-box textarea:focus {
-    border-color: #a60000;
-    box-shadow: 0 0 4px rgba(166,0,0,0.4);
+  border-color: #a60000;
+  box-shadow: 0 0 4px rgba(166, 0, 0, 0.4);
 }
 
 /* Edit Buttons */
 .edit-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 /* Save Button */
 .btn-save {
-    background: #a60000;
-    border: none;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.15s ease;
+  background: #a60000;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.15s ease;
 }
 
 .btn-save:hover {
-    background: #8b0000;
+  background: #8b0000;
 }
 
 /* Cancel Button */
 .btn-cancel {
-    background: #ddd;
-    border: none;
-    color: #333;
-    padding: 10px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.15s ease;
+  background: #ddd;
+  border: none;
+  color: #333;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.15s ease;
 }
 
 .btn-cancel:hover {
-    background: #c5c5c5;
+  background: #c5c5c5;
 }
 
 /* Animasi Modal */
 @keyframes fadeIn {
-    from { transform: translateY(-10px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* --- BUTTON GLOBAL STYLE --- */
 .faq-actions button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 8px;
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px; /* kotak rounded */
-    background: #f2f2f2;
-    transition: 0.25s ease;
-    font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px; /* kotak rounded */
+  background: #f2f2f2;
+  transition: 0.25s ease;
+  font-size: 16px;
 }
-
 
 /* --- ICON EDIT (PENSIL) --- */
 .btn-edit {
-    color: #333;
-    background: #e9e9e9;
+  color: #333;
+  background: #e9e9e9;
 }
 
 .btn-edit:hover {
-    background: #d0d0d0;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background: #d0d0d0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
 
 /* --- ICON BINTANG (FEATURE) --- */
 .btn-feature {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .btn-feature:hover {
-    background: #ffe9a8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(255, 199, 0, 0.4);
+  background: #ffe9a8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 199, 0, 0.4);
 }
 
 /* Jika bintang aktif (featured = 1), highlight */
 .btn-feature.active {
-    background: #ffe083;
-    color: #c79a00;
-    box-shadow: 0 3px 8px rgba(255, 185, 0, 0.4);
+  background: #ffe083;
+  color: #c79a00;
+  box-shadow: 0 3px 8px rgba(255, 185, 0, 0.4);
 }
 
 /* ===== FOOTER STYLE ===== */
 footer {
   background-color: #a30202;
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   padding-top: 40px;
   margin-top: auto;
   width: 100%;
@@ -547,16 +548,16 @@ footer {
 }
 
 .copyright {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Opsional: Tambahkan garis di atas teks */
-    margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Opsional: Tambahkan garis di atas teks */
+  margin-top: 20px;
 }
 
 .copyright p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: white; /* Sesuaikan warna jika perlu */
+  margin: 0;
+  font-size: 0.9rem;
+  color: white; /* Sesuaikan warna jika perlu */
 }
 
 /* RESPONSIVE */
@@ -591,7 +592,7 @@ footer {
   .nav-right {
     position: fixed;
     top: 0;
-    right: -250px; 
+    right: -250px;
     height: 100%;
     width: 250px;
     background: #a30202c7;
@@ -639,7 +640,7 @@ footer {
   }
 
   /* Footer */
-    .footer-container {
+  .footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -669,6 +670,12 @@ footer {
 }
 
 @keyframes fadeIn {
-  from {opacity:0; transform:scale(0.9);}
-  to {opacity:1; transform:scale(1);}
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
