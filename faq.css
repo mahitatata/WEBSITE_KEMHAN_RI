@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* RESET DASAR */
 * {
   margin: 0;
@@ -671,3 +672,686 @@ footer {
   from {opacity:0; transform:scale(0.9);}
   to {opacity:1; transform:scale(1);}
 }
+=======
+/* RESET DASAR */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+/* Container untuk konten utama */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* No Article */
+.no-article {
+  grid-column: 1 / -1;
+  display: flex;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin: 60px 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-weight: 500;
+}
+
+/* ===== MODERN FAQ STYLE ===== */
+
+.faq-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  padding-top: 70px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  color: #a30202;
+  letter-spacing: 0.5px;
+  padding-top: 70px;
+}
+
+.faq-item {
+  width: 100%;
+  max-width: 900px;
+  margin: 18px auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease;
+  border: 2px solid #b2b2b2ca;
+}
+
+.faq-item.active {
+  border: 2px solid #8b0000;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.faq-header {
+  width: 100%;
+  padding: 16px 18px;
+  background: transparent !important;
+  border-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item.active .faq-header {
+  background: #d0d0d0 !important;
+  border-radius: 10px 10px 0 0;
+}
+
+.faq-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Pertanyaan */
+.faq-question {
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.faq-question span {
+  flex: 1;
+}
+
+.faq-item .faq-question {
+  padding: 16px 18px; /* tambahkan padding DISINI */
+  border-radius: 10px;
+  background: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+
+.faq-item.active .faq-question {
+  padding: 16px 18px;
+  width: 100%;
+}
+
+/* Dropdown Arrow */
+.faq-toggle {
+  font-size: 20px;
+  transition: 0.3s;
+  color: #000000;
+  cursor: pointer;
+  margin-left: 12px;
+  margin-right: 8px;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(180deg);
+}
+
+/* Jawaban */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 16px;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 400px;
+  padding: 16px;
+}
+
+.faq-item .answer {
+  background: #ffffff;
+  border-radius: 0 0 5px 5px;
+}
+
+/* ===== ADMIN EDIT BUTTON ===== */
+
+.faq-edit {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f4f4f4;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.faq-edit i {
+  font-size: 15px;
+  color: #333;
+}
+
+.faq-edit:hover {
+  background: #e8e8e8;
+  border-color: #ccc;
+}
+
+/* ===== HOVER ANIM SMOOTH ===== */
+.faq-item.active {
+  border-left: 4px solid #a30202;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .faq-wrapper {
+    padding: 0 16px; /* tambahkan padding */
+  }
+
+  .faq-item {
+    padding: 0;
+    margin: 16px 0px;
+    border-radius: 10px;
+  }
+
+  .faq-question {
+    font-size: 17px;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .faq-actions .faq-edit {
+    padding: 4px 6px;
+  }
+
+  .faq-toggle {
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: 6px;
+  }
+
+  .faq-item.active .faq-question {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+
+/*edit faq*/
+/* --- Modal Background --- */
+.edit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+}
+
+/* --- Modal Box --- */
+.edit-box {
+  background: #ffffff;
+  width: 550px; /* <<< LEBAR BARU */
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.18);
+  animation: fadeIn 0.2s ease-out;
+  border-top: 6px solid #a60000; /* <<< WARNA MERAH KEMHAN */
+}
+
+/* Judul */
+.edit-box h3 {
+  margin-bottom: 18px;
+  font-size: 22px;
+  color: #a60000;
+  font-weight: 700;
+}
+
+/* Label */
+.edit-box label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Input & Textarea */
+.edit-box input[type="text"],
+.edit-box textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.6px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.15s ease;
+}
+
+/* Fokus */
+.edit-box input:focus,
+.edit-box textarea:focus {
+  border-color: #a60000;
+  box-shadow: 0 0 4px rgba(166, 0, 0, 0.4);
+}
+
+/* Edit Buttons */
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Save Button */
+.btn-save {
+  background: #a60000;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.15s ease;
+}
+
+.btn-save:hover {
+  background: #8b0000;
+}
+
+/* Cancel Button */
+.btn-cancel {
+  background: #ddd;
+  border: none;
+  color: #333;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.15s ease;
+}
+
+.btn-cancel:hover {
+  background: #c5c5c5;
+}
+
+/* Animasi Modal */
+@keyframes fadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- BUTTON GLOBAL STYLE --- */
+.faq-actions button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px; /* kotak rounded */
+  background: #f2f2f2;
+  transition: 0.25s ease;
+  font-size: 16px;
+}
+
+/* --- ICON EDIT (PENSIL) --- */
+.btn-edit {
+  color: #333;
+  background: #e9e9e9;
+}
+
+.btn-edit:hover {
+  background: #d0d0d0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* --- ICON BINTANG (FEATURE) --- */
+.btn-feature {
+  font-size: 18px;
+}
+
+.btn-feature:hover {
+  background: #ffe9a8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 199, 0, 0.4);
+}
+
+/* Jika bintang aktif (featured = 1), highlight */
+.btn-feature.active {
+  background: #ffe083;
+  color: #c79a00;
+  box-shadow: 0 3px 8px rgba(255, 185, 0, 0.4);
+}
+
+/* ===== FOOTER STYLE ===== */
+footer {
+  background-color: #a30202;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  padding-top: 40px;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* --- Container utama --- */
+.footer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0 60px 40px;
+}
+
+/* --- Section umum --- */
+.footer-section {
+  flex: 1;
+  min-width: 280px;
+  margin-bottom: 30px;
+}
+
+/* --- Judul section --- */
+.footer-section h4 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Garis putih di bawah judul */
+.footer-section h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+/* --- Logo & Instansi --- */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.footer-logo img {
+  width: 65px;
+  height: 65px;
+  margin-right: 12px;
+}
+
+.footer-instansi h2 {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* --- Deskripsi --- */
+.footer-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f0f0f0;
+  margin-top: 10px;
+  max-width: 360px;
+}
+
+/* --- List Umum --- */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.footer-section i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.footer-section a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.footer-section a:hover {
+  opacity: 0.8;
+}
+
+.footer-section.sosmed {
+  text-align: center;
+}
+
+.footer-section.sosmed h4 {
+  text-align: center;
+  margin: 0 auto 10px auto;
+}
+
+.footer-section h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-section h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.footer-section.sosmed .social-icons {
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* --- Footer bawah --- */
+.footer-bottom {
+  background-color: #7d0000;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 0.9rem;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Opsional: Tambahkan garis di atas teks */
+  margin-top: 20px;
+}
+
+.copyright p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: white; /* Sesuaikan warna jika perlu */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .faq h3 {
+    font-size: 22px;
+  }
+
+  .search-form input[type="text"] {
+    font-size: 14px;
+  }
+
+  .search-form button {
+    padding: 12px 20px;
+  }
+
+  /* Hamburger muncul */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 26px;
+    color: white;
+    background: none;
+    border: none;
+  }
+
+  /* Navbar disembunyikan */
+  .nav-right {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 250px;
+    background: #a30202c7;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 20px;
+    transition: right 0.4s ease-in-out;
+    z-index: 999;
+  }
+
+  /* Navbar muncul */
+  .nav-right.active {
+    right: 0;
+  }
+
+  /* Link menu */
+  .nav-right a {
+    margin: 15px 0;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .nav-right a:hover {
+    opacity: 0.85;
+  }
+
+  /* Tombol Masuk */
+  .nav-right .btn-login {
+    background: white;
+    color: #a30202;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Tombol Daftar */
+  .nav-right .btn-login:last-child {
+    background: #ffffff;
+    color: #a30202;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    padding: 10px 15px 25px;
+  }
+
+  .footer-desc {
+    max-width: 100%;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-section h4::after {
+    left: 50%;
+    margin: 0 auto;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+>>>>>>> 109b7aaf76d6ad31e925b329ea3ee97dab88b268

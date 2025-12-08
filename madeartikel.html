@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -358,4 +359,366 @@
   });
 </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buat Artikel Baru</title>
+  <link rel="icon" type="image/x-icon" href="logo kemhan 1.png">
+  <style>
+    /* ====== RESET & BASE ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f5f7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    /* ====== WRAPPER ====== */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #a30202;
+      display: inline-block;
+      padding-bottom: 5px;
+      color: #a30202;
+    }
+
+    /* ====== FORM ====== */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #a30202;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(163,2,2,0.15);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 180px;
+    }
+
+    /* ====== KATEGORI (radio style) ====== */
+    .kategori-options {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .kategori-option {
+      position: relative;
+    }
+
+    .kategori-option input[type="radio"] {
+      display: none;
+    }
+
+    .kategori-label {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #f9f9f9;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .kategori-label:hover {
+      background: #f0f0f0;
+      border-color: #a30202;
+    }
+
+    .kategori-option input[type="radio"]:checked + .kategori-label {
+      background: #a30202;
+      color: #fff;
+      border-color: #a30202;
+    }
+
+    /* ====== UPLOAD BOX ====== */
+    .upload-box {
+      border: 2px dashed #bbb;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .upload-box:hover {
+      border-color: #a30202;
+      background: #fafafa;
+    }
+
+    .upload-box p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* ====== TOGGLE SWITCH ====== */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 26px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #a30202;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    /* ====== BUTTONS ====== */
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-draft {
+      background: #e0e0e0;
+      color: #333;
+    }
+
+    .btn-publish {
+      background: #a30202;
+      color: #fff;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 600px) {
+      .form-actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+  <h2>Buat Artikel Baru</h2>
+  <form action="proses_artikel.php" method="POST" enctype="multipart/form-data">
+    <!-- Judul -->
+    <div class="form-group">
+      <label for="judul">Judul Artikel</label>
+      <input type="text" id="judul" name="judul" placeholder="Masukkan judul artikel..." required>
+    </div>
+
+    <!-- Kategori -->
+    <div class="form-group">
+      <label>Kategori</label>
+      <div class="kategori-options">
+        <div class="kategori-option">
+          <input type="radio" id="umum" name="kategori" value="Umum" required>
+          <label for="umum" class="kategori-label">Umum</label>
+        </div>
+        <div class="kategori-option">
+          <input type="radio" id="spbe" name="kategori" value="SPBE">
+          <label for="spbe" class="kategori-label">SPBE</label>
+        </div>
+        <div class="kategori-option">
+          <input type="radio" id="ipolek" name="kategori" value="IPOLEKSOSBUDHANKAM">
+          <label for="ipolek" class="kategori-label">IPOLEKSOSBUDHANKAM</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upload Gambar -->
+<div class="form-group">
+  <label for="gambar">Upload Gambar (Wajib)</label>
+  <div class="upload-box" onclick="document.getElementById('gambar').click()">
+    <p>Drag & drop atau klik untuk upload</p>
+    <input type="file" id="gambar" name="gambar" hidden required>
+  </div>
+</div>
+
+<!-- Upload PDF -->
+<div class="form-group">
+  <label for="pdf">Upload File PDF (Opsional)</label>
+  <div class="upload-box" onclick="document.getElementById('pdf').click()">
+    <p>Drag & drop atau klik untuk upload PDF</p>
+    <input type="file" id="pdf" name="pdf" accept="application/pdf" hidden>
+  </div>
+</div>
+
+    <!-- Isi Artikel -->
+    <div class="form-group">
+      <label for="isi">Isi Artikel</label>
+      <textarea id="isi" name="isi_artikel" placeholder="Tulis isi artikel..." required></textarea>
+    </div>
+
+    <!-- Toggle Internal -->
+    <div class="form-group" style="margin-top:20px;">
+  <input type="hidden" name="tipe" value="publik">
+  
+  <label class="switch">
+    <input type="checkbox" name="tipe" value="internal">
+    <span class="slider"></span>
+  </label>
+
+  <span style="margin-left:10px;">Internal</span>
+</div>
+
+    <!-- Tombol -->
+    <div class="form-actions">
+      <button type="submit" name="draft" class="btn btn-draft">Simpan Draft</button>
+      <button type="submit" name="publish" class="btn btn-publish">Publikasikan</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Upload preview
+  const uploadBox = document.querySelector(".upload-box");
+  const fileInput = document.getElementById("gambar");
+
+  uploadBox.addEventListener("dragover", e => { e.preventDefault(); uploadBox.style.borderColor="#a30202"; uploadBox.style.background="#fafafa"; });
+  uploadBox.addEventListener("dragleave", e => { uploadBox.style.borderColor="#bbb"; uploadBox.style.background="transparent"; });
+  uploadBox.addEventListener("drop", e => {
+    e.preventDefault();
+    fileInput.files = e.dataTransfer.files;
+    uploadBox.querySelector("p").textContent = fileInput.files[0].name;
+  });
+  fileInput.addEventListener("change", () => {
+    if(fileInput.files.length>0) uploadBox.querySelector("p").textContent = fileInput.files[0].name;
+  });
+
+  // Upload preview PDF
+  const pdfBox = document.querySelectorAll(".upload-box")[1]; // karena ini upload-box kedua
+  const pdfInput = document.getElementById("pdf");
+
+  pdfBox.addEventListener("dragover", e => { 
+    e.preventDefault(); 
+    pdfBox.style.borderColor = "#a30202"; 
+    pdfBox.style.background = "#fafafa"; 
+  });
+
+  pdfBox.addEventListener("dragleave", e => { 
+    pdfBox.style.borderColor = "#bbb"; 
+    pdfBox.style.background = "transparent"; 
+  });
+
+  pdfBox.addEventListener("drop", e => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    if (file.type === "application/pdf") {
+      pdfInput.files = e.dataTransfer.files;
+      pdfBox.querySelector("p").textContent = file.name;
+    } else {
+      alert("Hanya file PDF yang diperbolehkan!");
+    }
+  });
+
+  pdfInput.addEventListener("change", () => {
+    if (pdfInput.files.length > 0) {
+      if (pdfInput.files[0].type === "application/pdf") {
+        pdfBox.querySelector("p").textContent = pdfInput.files[0].name;
+      } else {
+        alert("Hanya file PDF yang diperbolehkan!");
+        pdfInput.value = "";
+      }
+    }
+  });
+</script>
+</body>
+>>>>>>> 109b7aaf76d6ad31e925b329ea3ee97dab88b268
 </html>
