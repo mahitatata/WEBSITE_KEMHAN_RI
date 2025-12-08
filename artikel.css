@@ -599,6 +599,15 @@ footer {
   margin-top: 10px;
 }
 
+footer, .footer-section, .social-icons a {
+  position: relative;
+  z-index: 999;
+}
+
+.social-icons a {
+  pointer-events: auto;
+}
+
 /* --- Footer bawah --- */
 .footer-bottom {
   background-color: #7d0000;
