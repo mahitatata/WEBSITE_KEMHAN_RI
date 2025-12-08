@@ -314,9 +314,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'fetch_pegawai') {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 10px;
+  z-index: 2000;
 }
 
-.icon-bell:hover .notif-dropdown {
+.notif-dropdown.show {
   display: block;
 }
 
@@ -826,6 +827,7 @@ tbody tr:hover {
 
 .icon-bell {
   position: relative;
+  cursor: pointer;
 }
 
 .notif-dropdown {
@@ -838,65 +840,12 @@ tbody tr:hover {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   display: none;
-  z-index: 1000;
+  z-index: 2000;
   padding: 10px;
 }
 
-.notif-dropdown h4 {
-  margin: 0 0 10px;
-  font-size: 14px;
-  color: #8B0000;
-}
-
-.notif-dropdown ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.notif-dropdown ul li {
-  padding: 6px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.notif-dropdown ul li a {
-  color: #333;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.notif-dropdown ul li a:hover {
-  color: #8B0000;
-}
-
-.notif-dropdown .see-all {
+.notif-dropdown.show {
   display: block;
-  margin-top: 8px;
-  text-align: center;
-  background: #8B0000;
-  color: #fff;
-  padding: 6px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 13px;
-}
-
-.icon-bell {
-  position: relative;
-}
-
-.notif-dropdown {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  width: 250px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  display: none;
-  z-index: 1000;
-  padding: 10px;
 }
 
 .notif-dropdown h4 {
@@ -1126,8 +1075,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (notifBell && notifDropdown) {
     notifBell.addEventListener('click', (e) => {
       e.stopPropagation();
-      notifDropdown.style.display =
-        notifDropdown.style.display === 'block' ? 'none' : 'block';
+      notifDropdown.classList.toggle('show');
+    });
+    
+    // Klik di dalam dropdown tidak menutupnya
+    notifDropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
   }
 
@@ -1145,7 +1098,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (e) => {
     // Notifikasi
     if (notifDropdown && !notifBell.contains(e.target)) {
-      notifDropdown.style.display = 'none';
+      notifDropdown.classList.remove('show');
     }
     // Profil
     if (profileDropdown && !profileButton.contains(e.target)) {

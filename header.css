@@ -276,6 +276,11 @@ nav a:hover {
   height: auto;
 }
 
+/* Cegah scrollbar hilang/muncul (goyang-goyang) */
+html {
+  overflow-y: scroll;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   body {
